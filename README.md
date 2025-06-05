@@ -7,8 +7,6 @@ A unified, plug-and-play SDK for connecting to XRPL wallets (Gem Wallet, Crossma
 - Developer selects wallet (no auto-detection)
 - Xaman (Xumm) support via official PKCE flow (API key required)
 - Accepts raw XRPL transaction payloads
-- Optional autofill via xrpl.js
-- TypeScript-first
 
 ## Installation
 
