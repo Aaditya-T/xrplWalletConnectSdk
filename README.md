@@ -17,14 +17,14 @@ npm install xrpl-wallet-connect
 ## Usage
 
 ```ts
-import { XRPLWalletConnect, WalletType } from 'xrpl-wallet-connect';
+import { XRPLWalletConnect } from 'xrpl-wallet-connect';
 
 const walletConnect = new XRPLWalletConnect({
   xamanApiKey: 'YOUR_XAMAN_API_KEY', // Only needed for Xaman
 });
 
 // Developer selects wallet
-walletConnect.selectWallet(WalletType.GemWallet);
+walletConnect.selectWallet("gemwallet"); //options are: xaman, gemwallet, crossmark
 
 // Sign in
 const { address } = await walletConnect.signIn();
