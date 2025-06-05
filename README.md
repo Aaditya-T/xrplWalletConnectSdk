@@ -7,8 +7,6 @@ A unified, plug-and-play SDK for connecting to XRPL wallets (Gem Wallet, Crossma
 - Developer selects wallet (no auto-detection)
 - Xaman (Xumm) support via official PKCE flow (API key required)
 - Accepts raw XRPL transaction payloads
-- Optional autofill via xrpl.js
-- TypeScript-first
 
 ## Installation
 
@@ -19,16 +17,14 @@ npm install xrpl-wallet-connect
 ## Usage
 
 ```ts
-import { XRPLWalletConnect, WalletType } from 'xrpl-wallet-connect';
+import { XRPLWalletConnect } from 'xrpl-wallet-connect';
 
 const walletConnect = new XRPLWalletConnect({
   xamanApiKey: 'YOUR_XAMAN_API_KEY', // Only needed for Xaman
-  autofill: true, // Optional
-  network: 'testnet', // Optional
 });
 
 // Developer selects wallet
-walletConnect.selectWallet(WalletType.GemWallet);
+walletConnect.selectWallet("gemwallet"); //options are: xaman, gemwallet, crossmark
 
 // Sign in
 const { address } = await walletConnect.signIn();
