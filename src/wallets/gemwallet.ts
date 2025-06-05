@@ -24,7 +24,6 @@ export class GemWalletAdapter implements WalletAdapter {
     if (!this.address) {
       throw new Error('Not signed in');
     }
-    // submitTransaction expects a transaction object
     const response = await submitTransaction({ transaction: payload });
     if (!response?.result?.hash) {
       throw new Error('Transaction failed or was rejected');
@@ -39,7 +38,6 @@ export class GemWalletAdapter implements WalletAdapter {
     if (!this.address) {
       throw new Error('Not signed in');
     }
-    // signTransaction expects a transaction object
     const response = await signTransaction({ transaction: payload });
     if (!response?.result?.signature) {
       throw new Error('Signing failed or was rejected');

@@ -3,7 +3,14 @@ import { GemWalletAdapter } from './wallets/gemwallet';
 import { CrossmarkAdapter } from './wallets/crossmark';
 import { XamanAdapter } from './wallets/xaman';
 
-
+/**
+ * XRPLWalletConnect is a class that allows you to connect to a wallet and sign transactions.
+ * @example
+ * ```ts
+ * const walletConnect = new XRPLWalletConnect({ xamanApiKey: 'your-xaman-api-key' });
+ * walletConnect.selectWallet('xaman');
+ * ```
+ */
 export class XRPLWalletConnect {
   private config: XRPLWalletConnectConfig;
   private selectedWallet: WalletType | null = null;
@@ -61,6 +68,18 @@ export class XRPLWalletConnect {
 
   /**
    * Sign and submit a transaction with the selected wallet.
+   * @param payload - The transaction payload.
+   * @example
+   * ```ts
+   * const walletConnect = new XRPLWalletConnect({ xamanApiKey: 'your-xaman-api-key' });
+   * walletConnect.selectWallet('xaman');
+   * const result = await walletConnect.signAndSubmit({
+   *   TransactionType: 'Payment',
+   *   Amount: '1000000',
+   *   Destination: 'rAbc',
+   * });
+   * console.log(result);
+   * ```
    */
   async signAndSubmit(payload: any): Promise<SignAndSubmitResult> {
     this.ensureWalletSelected();
@@ -71,6 +90,18 @@ export class XRPLWalletConnect {
 
   /**
    * Sign a transaction (without submitting) with the selected wallet.
+   * @param payload - The transaction payload.
+   * @example
+   * ```ts
+   * const walletConnect = new XRPLWalletConnect({ xamanApiKey: 'your-xaman-api-key' });
+   * walletConnect.selectWallet('xaman');
+   * const result = await walletConnect.sign({
+   *   TransactionType: 'Payment',
+   *   Amount: '1000000',
+   *   Destination: 'rAbc',
+   * });
+   * console.log(result);
+   * ```
    */
   async sign(payload: any): Promise<SignResult> {
     this.ensureWalletSelected();
@@ -81,6 +112,12 @@ export class XRPLWalletConnect {
 
   /**
    * Optional: Logout from the selected wallet.
+   * @example
+   * ```ts
+   * const walletConnect = new XRPLWalletConnect({ xamanApiKey: 'your-xaman-api-key' });
+   * walletConnect.selectWallet('xaman');
+   * await walletConnect.logout();
+   * ```
    */
   async logout() {
     this.ensureWalletSelected();
