@@ -23,8 +23,6 @@ import { XRPLWalletConnect, WalletType } from 'xrpl-wallet-connect';
 
 const walletConnect = new XRPLWalletConnect({
   xamanApiKey: 'YOUR_XAMAN_API_KEY', // Only needed for Xaman
-  autofill: true, // Optional
-  network: 'testnet', // Optional
 });
 
 // Developer selects wallet
