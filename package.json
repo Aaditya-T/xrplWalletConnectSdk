@@ -1,0 +1,31 @@
+{
+  "name": "xrpl-wallet-connect",
+  "version": "1.1.0",
+  "description": "A unified, plug-and-play SDK for connecting to XRPL wallets (Gem Wallet, Crossmark, Xaman) in your web app.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@crossmarkio/sdk": "^0.4.0",
+    "@gemwallet/api": "^3.8.0",
+    "xrpl": "^4.2.5",
+    "xumm": "^1.8.0",
+    "xumm-sdk": "^1.11.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.15.29",
+    "@types/prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.33.0",
+    "@typescript-eslint/parser": "^8.33.0",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
